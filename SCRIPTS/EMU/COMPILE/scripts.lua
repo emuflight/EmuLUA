@@ -24,6 +24,7 @@ local scripts = {
     "/SCRIPTS/EMU/pwm.lua",
     "/SCRIPTS/EMU/rates.lua",
     "/SCRIPTS/EMU/rescue.lua",
+    "/SCRIPTS/EMU/gpslimit.lua",
     "/SCRIPTS/EMU/vtx.lua",
     "/SCRIPTS/EMU/x9pre.lua",
     "/SCRIPTS/EMU/TELEMETRY/emu.lua",

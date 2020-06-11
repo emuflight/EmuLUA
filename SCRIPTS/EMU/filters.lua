@@ -10,9 +10,9 @@ return {
     yMinLimit      = 11,
     yMaxLimit      = 52,
     text= {
-        { t = "Matrix Filter",   x = 2,  y = 12,  to = SMLSIZE },
-        { t = "Notch Q",               x = 12, y = 20,  to = SMLSIZE },
-        { t = "Notch Min",               x = 12, y = 28,  to = SMLSIZE },
+        -- { t = "Matrix Filter",   x = 2,  y = 12,  to = SMLSIZE },
+        -- { t = "Notch Q",               x = 12, y = 20,  to = SMLSIZE },
+        -- { t = "Notch Min",               x = 12, y = 28,  to = SMLSIZE },
         { t = "Gyro Lowpass ",           x = 2,  y = 36,  to = SMLSIZE },
         { t = "Gyro Lowpass 1",           x = 12,  y = 44,  to = SMLSIZE },
         { t = "Filter Type",              x = 12, y = 52,  to = SMLSIZE },
@@ -53,8 +53,8 @@ return {
     },
     fields = {
         -- Matrix Filter
-        { x = 87, y = 20, min = 0, max = 1000,   to = SMLSIZE, vals = { 44, 45 } },
-        { x = 87, y = 28, min = 0, max = 1000,   to = SMLSIZE, vals = { 46, 47 } },
+       -- { x = 87, y = 20, min = 0, max = 1000,   to = SMLSIZE, vals = { 44, 45 } },
+       -- { x = 87, y = 28, min = 0, max = 1000,   to = SMLSIZE, vals = { 46, 47 } },
         -- Gyro Lowpass 1
         { x = 87, y = 52, min = 0, max = 1,      to = SMLSIZE, vals = { 30 }, table = { [0] = "PT1", [1] = "BIQUAD" } },
         { x = 87, y = 60, min = 0, max = 16000,  to = SMLSIZE, vals = { 18, 19 } },

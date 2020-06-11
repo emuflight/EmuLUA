@@ -17,9 +17,9 @@ local requestTimeout = 80 -- 800ms request timeout
 local currentPage = 1
 local currentLine = 1
 local saveTS = 0
-local saveTimeout = 0
+local saveTimeout = protocol.saveTimeout
 local saveRetries = 0
-local saveMaxRetries = 0
+local saveMaxRetries = protocol.saveMaxRetries
 local pageRequested = false
 local telemetryScreenActive = false
 local menuActive = false
@@ -34,25 +34,19 @@ local foregroundColor = LINE_COLOR or SOLID
 
 local globalTextOptions = TEXT_COLOR or 0
 
-local function saveSettings(new)
+local function saveSettings()
     if Page.values then
+        local payload = Page.values
         if Page.preSave then
             payload = Page.preSave(Page)
-        else
-            payload = {}
-            for i=1,(Page.outputBytes or #Page.values) do
-                payload[i] = Page.values[i]
-            end
         end
         protocol.mspWrite(Page.write, payload)
         saveTS = getTime()
-        if currentState == pageStatus.saving then
+        if pageState == pageStatus.saving then
             saveRetries = saveRetries + 1
         else
-            currentState = pageStatus.saving
+            pageState = pageStatus.saving
             saveRetries = 0
-            saveMaxRetries = protocol.saveMaxRetries or 2 -- default 2
-            saveTimeout = protocol.saveTimeout or 150     -- default 1.5s
         end
     end
 end

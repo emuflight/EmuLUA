@@ -6,6 +6,7 @@ PageFiles =
     "IMUF.lua",
     "filters.lua",
     "vtx.lua",
+    "gpslimit.lua",
     "rescue.lua",
     "gpspids.lua",
     "pwm.lua",
